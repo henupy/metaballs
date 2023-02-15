@@ -1,0 +1,10 @@
+{
+  "BG_COLOR": [255, 120, 120],
+  "BALL1_POS": [600, 350],
+  "BALL1_COLOR": [0, 255, 255],
+  "BALL2_COLOR": [255, 0, 255],
+  "FPS": 30,
+  "WIDTH": 1200,
+  "HEIGHT": 700,
+  "TOLERANCE": 0.015
+}
