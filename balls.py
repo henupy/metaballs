@@ -19,10 +19,10 @@ def read_config() -> dict:
     Reads the config file. Converts the lists of bgr colors to tuples.
     :return:
     """
-    with open('config.json', 'r') as f:
+    with open("config.json", "r") as f:
         data = json.load(f)
     for k, v in data.items():
-        if isinstance(v, list) and 'COLOR' in k:
+        if isinstance(v, list) and "COLOR" in k:
             data[k] = tuple([x / 255 for x in v])
 
     return data
@@ -119,17 +119,17 @@ def simulate(config: dict) -> None:
     :param config:
     :return:
     """
-    w = config['WIDTH']
-    h = config['HEIGHT']
-    ball1_pos = np.array(config['BALL1_POS'])
-    ball1_color = config['BALL1_COLOR']
-    ball2_color = config['BALL2_COLOR']
-    bg_color = config['BG_COLOR']
-    tol = config['TOLERANCE']
-    fps = config['FPS']
+    w = config["WIDTH"]
+    h = config["HEIGHT"]
+    ball1_pos = np.array(config["BALL1_POS"])
+    ball1_color = config["BALL1_COLOR"]
+    ball2_color = config["BALL2_COLOR"]
+    bg_color = config["BG_COLOR"]
+    tol = config["TOLERANCE"]
+    fps = config["FPS"]
     img = np.zeros((h, w, 3))
     pad_x, pad_y = 100, 100
-    name = 'Metaballs'
+    name = "Metaballs"
     cv2.namedWindow(name)
     while True:
         img = _update_img(img, ball1_pos, ball1_color, ball2_color,
@@ -144,5 +144,5 @@ def main():
     simulate(config)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
